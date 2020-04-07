@@ -3,7 +3,7 @@ import React, { Component } from 'react'
 class Index extends Component {
     constructor(props) {
         super(props)
-    
+        this.inputRef = React.createRef()
         this.state = {
             name: '',
             DOB: '',
@@ -35,6 +35,10 @@ class Index extends Component {
         })
         //event.preventDefault()
     }
+
+    componentDidMount(){
+        this.inputRef.current.focus()
+    }
     
     render() {
         return (
@@ -46,7 +50,7 @@ class Index extends Component {
                 <div>
                     
                     <div><label>Name: </label>
-                    <input type="text" value= {this.state.name} onChange={this.handleName} /></div>
+                    <input type="text" ref={this.inputRef} value= {this.state.name} onChange={this.handleName} /></div>
                     <div><label>DOB: </label>
                     <input type="text" value= {this.state.DOB} onChange={this.handleDOB} /></div>
                     <div><label>Phone: </label>
