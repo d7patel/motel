@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 
-class Index extends Component {
+class CheckIn extends Component {
     constructor(props) {
         super(props)
         this.inputRef = React.createRef()
@@ -43,14 +43,13 @@ class Index extends Component {
     render() {
         return (
             <form onSubmit={this.handleCheckIn}>
-                <h1>Quality inn</h1>
                 <div>
                     {this.state.message}
                 </div>
-                <div>
+                <div >
                     
-                    <div><label>Name: </label>
-                    <input type="text" ref={this.inputRef} value= {this.state.name} onChange={this.handleName} /></div>
+                    <div className="checkin-form"><label>Name: </label>
+                    <input className="checkin-form" type="text" ref={this.inputRef} value= {this.state.name} onChange={this.handleName} /></div>
                     <div><label>DOB: </label>
                     <input type="text" value= {this.state.DOB} onChange={this.handleDOB} /></div>
                     <div><label>Phone: </label>
@@ -83,4 +82,4 @@ class Index extends Component {
     }
 }
 
-export default Index
+export default CheckIn
