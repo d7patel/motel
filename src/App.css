@@ -18,3 +18,36 @@ nav{
   align-items: center;
   list-style: none;
 }
+
+input,select {
+  margin-top: 5px;
+  margin-bottom: 5px;
+  display:inline-block;
+  *display: inline;     /* for IE7*/
+  zoom:1;              /* for IE7*/
+  vertical-align:middle;
+  margin-left:20px;
+  width: 150px;
+}
+
+label {
+  display:inline-block;
+  *display: inline;     /* for IE7*/
+  zoom:1;              /* for IE7*/
+  padding-top: 5px;
+  text-align: right;
+  width: 140px;
+}
+
+.form-class{
+  margin-top: 50px;
+  text-align: center;
+}
+
+button{
+  margin: 10px;
+}
+
+body {
+  background-color: rgb(207, 223, 223);
+}
