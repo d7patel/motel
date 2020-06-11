@@ -1,42 +1,5 @@
-h1, h3{
+h3{
   text-align: center;
-}
-
-nav{
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  min-height: 10vh;
-  background: rgb(83, 88, 89);
-  color: white;
-}
-
-.nav-links{
-  width: 40%;
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  list-style: none;
-}
-
-input,select {
-  margin-top: 5px;
-  margin-bottom: 5px;
-  display:inline-block;
-  *display: inline;     /* for IE7*/
-  zoom:1;              /* for IE7*/
-  vertical-align:middle;
-  margin-left:20px;
-  width: 150px;
-}
-
-label {
-  display:inline-block;
-  *display: inline;     /* for IE7*/
-  zoom:1;              /* for IE7*/
-  padding-top: 5px;
-  text-align: right;
-  width: 140px;
 }
 
 .form-class{
@@ -44,10 +7,54 @@ label {
   text-align: center;
 }
 
-button{
-  margin: 10px;
+.row-header{
+  margin:0px auto;
+  padding:0px auto;
+}
+
+.row-content {
+  margin:0px auto;
+  padding: 50px 0px 50px 0px;
+  border-bottom: 1px ridge;
+  min-height:400px;
+}
+
+.footer{
+  background-color: rgb(234, 238, 242);
+  margin:0px auto;
+  padding: 20px 0px 20px 0px;
+}
+.jumbotron {
+  padding:70px 30px 70px 30px;
+  margin:0px auto;
+}
+
+address{
+  font-size:80%;
+  margin:0px;
+  color:#0f0f0f;
+}
+
+.navbar-dark {
+  background-color: rgb(65, 65, 65);
 }
 
 body {
-  background-color: rgb(207, 223, 223);
+  background-color: rgb(179, 201, 205);
+}
+
+.check{
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0, 0.4); /* Black w/opacity/see-through */
+  color: white;
+  font-weight: bold;
+  border: 3px solid #f1f1f1;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+  width: 80%;
+  padding: 65px;
+  text-align: center;
 }

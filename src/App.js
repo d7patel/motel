@@ -1,34 +1,24 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, {Component} from 'react';
 import './App.css';
-import CheckIn from './components/CheckIn';
-import Navbar from './components/Navbar';
-import CheckOut from './components/CheckOut';
-import About from './components/About';
-import Stay from './components/Stay';
-import {BrowserRouter as Router, Switch, Route} from 'react-router-dom';
+import Main from './components/Main';
+import { BrowserRouter } from 'react-router-dom';
+import {Provider} from 'react-redux';
+import {ConfigureStore} from './redux/configureStore';
 
-function App() {
-  return (
-    <Router>
-      <div className="App">
-        <Navbar />
-        <Switch>
-          <Route path="/" exact component={Home} />
-          <Route path="/about" component={About}/>
-          <Route path="/checkin" component={CheckIn}/>
-          <Route path="/stayover" component={Stay}/>
-          <Route path="/checkout" component={CheckOut}/>
-        </Switch>
-      </div>
-    </Router>
-  );
+const store = ConfigureStore();
+
+class App extends Component {
+  render() {
+    return (
+      <Provider store={store}>
+        <BrowserRouter>
+          <div className="App">
+            <Main />
+          </div>
+        </BrowserRouter>
+      </Provider>
+    );
+  }
 }
-
-const Home = () => (
-  <div>
-    <h1>Home page</h1>
-  </div>
-);
 
 export default App;

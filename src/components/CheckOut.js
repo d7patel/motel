@@ -5,6 +5,7 @@ class CheckOut extends Component {
         return (
             <div>
                 <h3>Check out</h3>
+                <hr />
             </div>
         )
     }
