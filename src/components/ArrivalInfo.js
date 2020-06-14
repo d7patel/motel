@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 
     function RenderInfo({reservation, id}){   
         return(
-            <div className="col-12 col-md-5 m-1">
+            <div className="col-12 col-md-6 m-1">
                 <Card>
                     <CardBody>
                         <CardTitle >{reservation.firstname}</CardTitle>
@@ -27,7 +27,7 @@ import { Link } from 'react-router-dom';
                             <BreadcrumbItem active>{props.reservation.id}</BreadcrumbItem>
                         </Breadcrumb>
                         <div className="col-12">
-                            <h3>{props.reservation.firstname}</h3>
+                            <h3>{props.reservation.firstname} {props.reservation.lastname}</h3>
                             <hr />
                         </div>                
                     </div>

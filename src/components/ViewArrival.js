@@ -1,15 +1,17 @@
 import React, { Component } from 'react';
-import {Card, CardTitle, CardSubtitle, CardText, Breadcrumb, BreadcrumbItem} from 'reactstrap';
+import { Breadcrumb, BreadcrumbItem} from 'reactstrap';
 import {Link} from 'react-router-dom';
 
 function Reservation ({reservation, onClick}){
     return(
-        <Card>
-            <Link to ={`/ViewArrival/${reservation.id}`}>
-                <p>  ({reservation.id})  {reservation.firstname} {reservation.lastname}</p>
-                
-            </Link>
-        </Card>
+        <tr>
+            <Link to ={`/ViewArrival/${reservation.id}`}><th>{reservation.id+1}</th> </Link>
+            <td>{reservation.firstname}</td>
+            <td>{reservation.lastname}</td>
+            <td>{reservation.checkInDate}</td>
+            <td>{reservation.checkOutDate}</td>
+            <td>{reservation.roomtype}</td>
+        </tr>
     );
 }
 
@@ -26,21 +28,35 @@ const ViewArrival = (props) => {
                 <Breadcrumb>
                     <BreadcrumbItem><Link to="/home">Home</Link></BreadcrumbItem>
                     <BreadcrumbItem active>View Arrival</BreadcrumbItem>
-                </Breadcrumb>
-                
+                </Breadcrumb>    
                 <div className="col-12">
                     <h3>View Arrival</h3>
                     <hr />
                 </div>                
             </div>
             <div className="row">
-                <div className="col-12">
-                    {rese}
+                <div className="col-12 m-1">
+                    <div class="table-responsive">
+                        <table class="table table-striped">
+                            <thead class="thead-dark">
+                                <tr>
+                                    <th>ID</th>
+                                    <th>First Name</th>
+                                    <th>Last Name</th>
+                                    <th>Check In Date</th>
+                                    <th>Check Out Date</th>
+                                    <th>Roomtype</th>
+                                </tr>
+                            </thead>
+                            <tbody>                            
+                                {rese}
+                            </tbody>
+                        </table>
+                    </div>   
                 </div>
             </div>
         </div>
-    )
-    
+    );
 }
 
 export default ViewArrival
