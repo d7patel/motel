@@ -46,7 +46,7 @@ class Main extends Component {
         const Arrival = (match) => {
             return(
                 <ArrivalInfo 
-                reservation={this.props.reservation.filter((reservation) => reservation.id)[0]}/>
+                reservation={this.props.reservation.filter((reservation) => reservation.id)[1]}/>
             );
         }
 

@@ -5,9 +5,8 @@ import {Link} from 'react-router-dom';
 function Reservation ({reservation, onClick}){
     return(
         <tr>
-            <Link to ={`/ViewArrival/${reservation.id}`}><th>{reservation.id+1}</th> </Link>
-            <td>{reservation.firstname}</td>
-            <td>{reservation.lastname}</td>
+            <th>{reservation.id+1}</th> 
+            <Link to ={`/ViewArrival/${reservation.id}`}><td>{reservation.firstname} {reservation.lastname}</td></Link>
             <td>{reservation.checkInDate}</td>
             <td>{reservation.checkOutDate}</td>
             <td>{reservation.roomtype}</td>
@@ -41,8 +40,8 @@ const ViewArrival = (props) => {
                             <thead class="thead-dark">
                                 <tr>
                                     <th>ID</th>
-                                    <th>First Name</th>
-                                    <th>Last Name</th>
+                                    <th>Full Name</th>
+                                    
                                     <th>Check In Date</th>
                                     <th>Check Out Date</th>
                                     <th>Roomtype</th>
