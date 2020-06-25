@@ -5,8 +5,8 @@ import {Link} from 'react-router-dom';
 function Reservation ({reservation, onClick}){
     return(
         <tr>
-            <th><Button type="submit" value="submit" color="primary" >Check In</Button></th>
-            <td>{reservation.id+1}</td> 
+            <td><Button type="submit" value="submit" color="primary">Check In</Button></td>
+            <th>{reservation.id+1}</th> 
             <Link to ={`/ViewArrival/${reservation.id}`} ><td>{reservation.firstname} {reservation.lastname}</td></Link>
             <td>{reservation.checkInDate}</td>
             <td>{reservation.checkOutDate}</td>

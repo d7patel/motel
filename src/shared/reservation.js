@@ -1,8 +1,8 @@
 export const RESERVATION = [
     {  
         id: 0,
-        firstname: "Dhruv", 
-        lastname: "Patel", 
+        firstname: "Priyam", 
+        lastname: "Drodger", 
         phone: "1234567890", 
         email: "dhru@yahoo.com", 
         dob: "12/12/1212", 
@@ -15,8 +15,8 @@ export const RESERVATION = [
     },
     {  
         id: 1,
-        firstname: "Priyam", 
-        lastname: "Drodger", 
+        firstname: "Dhruv", 
+        lastname: "Patel", 
         phone: "1234567890", 
         email: "dhru@yahoo.com", 
         dob: "12/12/1212", 
