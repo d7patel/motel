@@ -76,9 +76,9 @@ class Header extends Component {
             <Jumbotron>
                 <div className="container">
                     <div className="row row-header">
-                    <div className="col-12 col-sm-3"><img src='assets/images/logo.png' height="160" width="180" alt='The Blue Vivid Resort' /></div>
+                    <div className="col-12 col-md-3"><img src='assets/images/logo.png' height="160" width="180" alt='The Blue Vivid Resort' /></div>
 
-                        <div className="col-12 col-sm-6">
+                        <div className="col-12 col-md-6">
                             <h1>The Blue Vivid Resort</h1>
                             <p>Our rooms were inspired by the downtown Indianapolis skyline boasting stylish 
                             décor, flexible work spaces and plush bedding. Expansive windows provide stunning 

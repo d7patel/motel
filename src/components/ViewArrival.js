@@ -1,12 +1,13 @@
 import React, { Component } from 'react';
-import { Breadcrumb, BreadcrumbItem} from 'reactstrap';
+import { Breadcrumb, BreadcrumbItem, Button} from 'reactstrap';
 import {Link} from 'react-router-dom';
 
 function Reservation ({reservation, onClick}){
     return(
         <tr>
-            <th>{reservation.id+1}</th> 
-            <Link to ={`/ViewArrival/${reservation.id}`}><td>{reservation.firstname} {reservation.lastname}</td></Link>
+            <th><Button type="submit" value="submit" color="primary" >Check In</Button></th>
+            <td>{reservation.id+1}</td> 
+            <Link to ={`/ViewArrival/${reservation.id}`} ><td>{reservation.firstname} {reservation.lastname}</td></Link>
             <td>{reservation.checkInDate}</td>
             <td>{reservation.checkOutDate}</td>
             <td>{reservation.roomtype}</td>
@@ -14,11 +15,17 @@ function Reservation ({reservation, onClick}){
     );
 }
 
-const ViewArrival = (props) => {
+class ViewArrival extends Component {
+    constructor(props){
+        super(props);
+    }
+   
+    render() {
     
-    const rese = props.reservation.map((reservation) => {
+    const rese = this.props.reservation.map((reservation) => {
         return(
-            <Reservation reservation = {reservation} />
+            <Reservation reservation = {reservation}
+            key={reservation.id}/>
         );
     })
     return (
@@ -35,10 +42,11 @@ const ViewArrival = (props) => {
             </div>
             <div className="row">
                 <div className="col-12 m-1">
-                    <div class="table-responsive">
-                        <table class="table table-striped">
-                            <thead class="thead-dark">
+                    <div className="table-responsive">
+                        <table className="table table-striped">
+                            <thead className="thead-dark">
                                 <tr>
+                                    <th>Status</th>
                                     <th>ID</th>
                                     <th>Full Name</th>
                                     
@@ -56,6 +64,7 @@ const ViewArrival = (props) => {
             </div>
         </div>
     );
+    }
 }
 
 export default ViewArrival

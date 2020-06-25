@@ -10,6 +10,7 @@ import ViewArrival from './ViewArrival';
 import ArrivalInfo from './ArrivalInfo';
 import {BrowserRouter as Router, Switch, Route, Redirect, withRouter} from 'react-router-dom';
 import {connect} from 'react-redux';
+import {addReservation} from '../redux/ActionCreators';
 
 const mapStateToProps = state => {
     return{
@@ -18,9 +19,9 @@ const mapStateToProps = state => {
     }
 }
 
-{/*const mapDispatchToProps = (dispatch) => ({
-    addReservation: (reseId, firstname, lastname, phone, email, dob, checkInDate, checkOutDate, totalStay, totalPeople, roomtype, message) => dispatch(addReservation(reseId, firstname, lastname, phone, email, dob, checkInDate, checkOutDate, totalStay, totalPeople, roomtype, message))
-});*/}
+const mapDispatchToProps = (dispatch) => ({
+    addReservation: (id, firstname, lastname, phone, email, dob, checkInDate, checkOutDate, totalStay, totalPeople, roomtype, message) => dispatch(addReservation(id, firstname, lastname, phone, email, dob, checkInDate, checkOutDate, totalStay, totalPeople, roomtype, message))
+});
 
 class Main extends Component {
 
@@ -38,7 +39,7 @@ class Main extends Component {
 
         const Reservation = () => {
             return(
-                <CreateReservation
+                <CreateReservation addReservation= {this.props.addReservation}
                     />
             );
         }
@@ -46,7 +47,8 @@ class Main extends Component {
         const Arrival = (match) => {
             return(
                 <ArrivalInfo 
-                reservation={this.props.reservation.filter((reservation) => reservation.id)[1]}/>
+                reservation={this.props.reservation.filter((reservation) => reservation.id)[[0]]}
+                />
             );
         }
 
@@ -58,7 +60,7 @@ class Main extends Component {
                         <Route path="/home" component={HomePage} />
                         <Route path="/CreateReservation" component={Reservation}/>
                         <Route exact path="/ViewArrival" component={() => <ViewArrival reservation= {this.props.reservation} />} />
-                        <Route path="/ViewArrival/:id" component={Arrival}/>
+                        <Route path="/ViewArrival/:rid" component={Arrival}/>
                         <Route path="/stayover" component={Stay}/>
                         <Route path="/checkout" component={CheckOut}/>
                         <Route path="/help" component={Help}/>
@@ -71,4 +73,4 @@ class Main extends Component {
     }
 }
 
-export default withRouter(connect(mapStateToProps)(Main));
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(Main));

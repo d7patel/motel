@@ -40,7 +40,7 @@ export const RESERVATION = [
         totalPeople: 2, 
         roomtype: "Double Queen", 
         message: "message"
-    },
+    } /** ,
     {  
         id: 3,
         firstname: "Dhruv", 
@@ -166,5 +166,5 @@ export const RESERVATION = [
         totalPeople: 5, 
         roomtype: "Suite", 
         message: "message"
-    }
+    }*/
 ];

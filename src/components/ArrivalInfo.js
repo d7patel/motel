@@ -15,8 +15,8 @@ function PaymentForm(){
         <div className="col-12 col-md-5 m-1">
             <LocalForm >
                 <Row className="form-group">
-                    <Label htmlFor="name" md={4}>Name on card</Label>
-                    <Col md={8}>
+                    <Label htmlFor="name" xs={4}>Name on card</Label>
+                    <Col xs={8}>
                     
                         <Control.text model=".name" id="name" name="name" placeholder="Name"
                             className="form-control"
@@ -37,8 +37,8 @@ function PaymentForm(){
                     </Col>
                 </Row>
                 <Row className="form-group">
-                    <Label htmlFor="zipcode" md={4}>Postal code</Label>
-                    <Col md={4}>
+                    <Label htmlFor="zipcode" xs={4}>Postal code</Label>
+                    <Col xs={5}>
                     
                         <Control.text model=".zipcode" id="zipcode" name="zipcode" placeholder="12345"
                             className="form-control"
@@ -60,8 +60,8 @@ function PaymentForm(){
                     </Col>
                 </Row>
                 <Row className="form-group">
-                    <Label htmlFor="cardNum" md={4}>Card number</Label>
-                    <Col md={8}>
+                    <Label htmlFor="cardNum" xs={4}>Card number</Label>
+                    <Col xs={8}>
                         <Control.text model=".cardNum" id="cardNum" name="cardNum" placeholder="Card number"
                             className="form-control"
                             validators={{
@@ -82,8 +82,8 @@ function PaymentForm(){
                     </Col>
                 </Row>
                 <Row className="form-group">
-                    <Label htmlFor="expiration" md={4}>Expiration</Label>
-                    <Col md={3}>
+                    <Label htmlFor="expiration" xs={4}>Expiration</Label>
+                    <Col xs={3}>
                     
                         <Control.text model=".expiration" id="expiration" name="expiration" placeholder="MM"
                             className="form-control"
@@ -104,7 +104,7 @@ function PaymentForm(){
                             />
                     </Col>
                     <p> / </p>
-                    <Col md={3}>
+                    <Col xs={3}>
                     
                         <Control.text model=".expiration2" id="expiration2" name="expiration2" placeholder="YY"
                             className="form-control"
@@ -126,8 +126,8 @@ function PaymentForm(){
                     </Col>
                 </Row>
                 <Row className="form-group">
-                    <Label htmlFor="cvv" md={4}>CVV</Label>
-                    <Col md={3}>
+                    <Label htmlFor="cvv" xs={4}>CVV</Label>
+                    <Col xs={4}>
                     
                         <Control.text model=".cvv" id="cvv" name="cvv" placeholder="123"
                             className="form-control"
@@ -150,15 +150,15 @@ function PaymentForm(){
                     </Col>
                 </Row>
                 <Row className="form-group">
-                    <Label htmlFor="comment" md={4}>Notes</Label>
-                    <Col md={8}>
+                    <Label htmlFor="comment" xs={4}>Notes</Label>
+                    <Col xs={8}>
                         <Control.textarea model=".comment" id="comment" name="comment" rows="4"
                             className="form-control"
                             />
                     </Col>
                 </Row>
                 <Row className="form-group">
-                    <Col md={{size: 8, offset: 4}}>
+                    <Col xs={{size: 8, offset: 4}}>
                         <Button type="submit" value="submit" color="primary">Check In</Button>
                     </Col>
                 </Row>
@@ -227,7 +227,7 @@ const ArrivalInfo = (props) => {
                 </div>
                 <div className="row">
                     <RenderInfo reservation={props.reservation} 
-                    id={props.reservation.id}/>
+                    rid={props.reservation.id}/>
                     <PaymentForm />
                 </div>
             </div>

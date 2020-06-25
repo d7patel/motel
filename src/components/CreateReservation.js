@@ -10,7 +10,6 @@ const isNumber = (val) => !isNaN(Number(val));
 const validEmail = (val) => /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(val);
 const dateformat = (val) => /^(0?[1-9]|1[012])[\/\-](0?[1-9]|[12][0-9]|3[01])[\/\-]\d{4}$/i.test(val);
 
-
 export default class CreateReservation extends Component {
     constructor(props) {
         super(props)
@@ -18,10 +17,12 @@ export default class CreateReservation extends Component {
         this.handleSubmit = this.handleSubmit.bind(this);
     }
 
-
     handleSubmit(values) {
+        this.props.addReservation(this.props.id, values.firstname, values.lastname, values.phone, values.email, values.dob, 
+            values.checkInDate, values.checkOutDate, values.totalStay, values.totalPeople, values.roomtype, values.message)
+
         console.log('Current State is: ' + JSON.stringify(values));
-        alert('Current State is: ' + JSON.stringify(values));
+    {/*alert('Current State is: ' + JSON.stringify(values));*/}
     }
  
     

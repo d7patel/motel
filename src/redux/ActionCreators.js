@@ -1,9 +1,9 @@
 import * as ActionTypes from './ActionTypes';
 
-export const addReservation = (reseId, firstname, lastname, phone, email, dob, checkInDate, checkOutDate, totalStay, totalPeople, roomtype, message) => ({
+export const addReservation = (id, firstname, lastname, phone, email, dob, checkInDate, checkOutDate, totalStay, totalPeople, roomtype, message) => ({
     type: ActionTypes.ADD_RESERVATION,
     payload: {
-        reseId: reseId,
+        id: id,
         firstname: firstname, 
         lastname: lastname, 
         phone: phone, 
